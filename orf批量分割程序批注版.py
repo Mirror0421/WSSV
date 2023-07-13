@@ -35,9 +35,9 @@ for j in range(0, len(cols_list1)):
                     strd1 = strd[strd.index(str2):len(strd)]  # 删去orf开头之前的数据防止找结尾找到开头之前
                     print(strd1.index(str3) + len(str3))  # 寻找的orf的结尾位于第几位
                 except ValueError:  # 如果发生寻找不到开头或者结尾的情况的处理
-                    print('找不到捏')
+                    print('error')
                     d.write('>' + i_str + '\n')  # 输入fasta结构的标头
-                    d.write('找不到捏' + '\n')  # 在txt文档中提示报错
+                    d.write('error' + '\n')  # 在txt文档中提示报错
                 else:
                     print(len(strd[strd.index(str2):strd.index(str3) + len(str3)]))  # 得出找到的orf的长度，用以初步验证找到的orf有没有问题
                     print(strd[strd.index(str2):strd.index(str3) + len(str3)])  # 寻找到的新全序列中对应的orf
